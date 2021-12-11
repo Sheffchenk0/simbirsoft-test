@@ -1,0 +1,74 @@
+.match {
+    width: 100%;
+    height: 90px;
+    border: 1px solid black;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.win {
+    background: rgb(0, 255, 72);
+    background: linear-gradient(90deg, rgba(0, 255, 72, 1) 0%, rgba(255, 0, 0, 1) 100%);
+}
+
+.draw {
+    background: rgb(192, 192, 192);
+}
+
+.lose {
+    background: rgb(255, 0, 0);
+    background: linear-gradient(90deg, rgba(255, 0, 0, 1) 0%, rgba(0, 255, 72, 1) 100%);
+}
+
+.team {
+    text-align: center;
+    position: absolute;
+}
+
+.team:first-child {
+    text-align: left;
+    left: 30px;
+}
+
+.team:last-child {
+    text-align: right;
+    right: 30px;
+}
+
+.title {
+    font-size: 20px;
+    color: #000;
+    font-weight: 700;
+    max-width: 200px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.date {
+    font-size: 18px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.competition {
+    font-size: 16px;
+    color: black;
+    text-align: center;
+}
+
+.score {
+    line-height: 1.1;
+    font-weight: 700;
+    font-size: 15px;
+}
