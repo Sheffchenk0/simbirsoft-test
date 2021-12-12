@@ -10,7 +10,7 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <Suspense fallback={<div>loading</div>}>
+        <Suspense fallback={<div>Пожалуйста подождите...</div>}>
           <App />
         </Suspense>
       </Provider>

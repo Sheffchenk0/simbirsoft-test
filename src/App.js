@@ -5,6 +5,9 @@ import Footer from './Components/Footer/Footer';
 import Header from './Components/Header/Header';
 
 const Matches = lazy(() => import('./Pages/Matches/Matches'));
+const Team = lazy(() => import('./Pages/Team/Team'));
+const Competitions = lazy(() => import('./Pages/Competitions/Competitions'));
+const League = lazy(() => import('./Pages/League/League'));
 
 function App() {
   return (
@@ -12,8 +15,10 @@ function App() {
       <Header />
       <div className="container">
         <Switch>
-          <Route path="/matches" render={() => <Matches />} />
-          {/* <Route path="/" render={() => <Form />} /> */}
+          <Route path="/matches" component={Matches} />
+          <Route path="/competitions/" component={Competitions} />
+          <Route path="/team/:id" component={Team} />
+          <Route path="/competition/:id" component={League} />
         </Switch>
       </div>
       <Footer />

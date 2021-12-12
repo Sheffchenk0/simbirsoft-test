@@ -1,0 +1,22 @@
+.competition {
+    width: 100%;
+    display: flex;
+    border: 1px solid black;
+    border-radius: 8px;
+    justify-content: space-between;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.title {
+    font-size: 23px;
+    font-weight: 500;
+}
+
+.country {
+    font-size: 16px;
+}
+
+.date {
+    font-size: 16px;
+}

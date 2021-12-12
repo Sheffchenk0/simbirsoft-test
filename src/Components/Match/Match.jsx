@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React, { memo, useEffect, useState } from 'react';
+import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import styles from './Match.module.css';
 
 export default memo(function Match({
@@ -9,7 +10,8 @@ export default memo(function Match({
   competition,
   winner,
   score,
-  status,
+  leftTeamId,
+  rightTeamId,
 }) {
   const [formatDate, setformatDate] = useState('00:00');
   useEffect(() => {
@@ -40,7 +42,9 @@ export default memo(function Match({
         [styles.lose]: winner === 'AWAY_TEAM',
       })}>
       <div className={styles.team}>
-        <div className={styles.title}>{leftTeam}</div>
+        <Link to={'/team/' + leftTeamId}>
+          <div className={styles.title}>{leftTeam}</div>
+        </Link>
       </div>
       <div className={styles.info}>
         <div className={styles.date}>{formatDate}</div>
@@ -48,7 +52,9 @@ export default memo(function Match({
         <div className={styles.score}>{winner && score[0] + ':' + score[1]}</div>
       </div>
       <div className={styles.team}>
-        <div className={styles.title}>{rightTeam}</div>
+        <Link to={'/team/' + rightTeamId}>
+          <div className={styles.title}>{rightTeam}</div>
+        </Link>
       </div>
     </div>
   );

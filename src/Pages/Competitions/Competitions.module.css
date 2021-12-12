@@ -1,0 +1,4 @@
+.competitions {
+    display: flex;
+    flex-direction: column;
+}

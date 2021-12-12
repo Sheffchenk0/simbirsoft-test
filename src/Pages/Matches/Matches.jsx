@@ -2,28 +2,30 @@ import React, { memo, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import Match from '../../Components/Match/Match';
-import { getMatches } from '../../redux/reducers';
+import { getMatches, getTeamMatches } from '../../redux/reducers';
 import styles from './Matches.module.css';
 
-export default memo(function Matches() {
+export default memo(function Matches({ teamId = null }) {
   const dispatch = useDispatch();
   const matches = useSelector((state) => state.matches);
   useEffect(() => {
-    if (!matches?.length) {
+    if (teamId !== null) {
+      dispatch(getTeamMatches(teamId));
+    } else {
       dispatch(getMatches());
     }
-  }, [matches]);
+  }, [teamId]);
 
   return (
     <div className={styles.matches}>
-      {matches.length &&
+      {matches.length > 0 &&
         matches.map((el) => (
           <Match
             key={el.id}
             leftTeam={el.homeTeam?.name}
             rightTeam={el.awayTeam?.name}
             leftTeamId={el?.homeTeam?.id}
-            rughtTeamId={el?.awayTeam?.id}
+            rightTeamId={el?.awayTeam?.id}
             date={el.utcDate}
             competition={el.competition?.name}
             winner={el?.score?.winner}

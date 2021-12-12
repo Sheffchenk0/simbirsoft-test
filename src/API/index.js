@@ -8,7 +8,16 @@ const instance = axios.create({
 });
 
 export const API = {
-  getMatches: (name) => {
+  getMatches: () => {
     return instance.get('matches').then((res) => res);
+  },
+  getTeam: (id) => {
+    return instance.get('teams/' + id).then((res) => res);
+  },
+  getTeamMatches: (id) => {
+    return instance.get('teams/' + id + '/matches').then((res) => res);
+  },
+  getCompetitions: () => {
+    return instance.get('competitions/').then((res) => res);
   },
 };

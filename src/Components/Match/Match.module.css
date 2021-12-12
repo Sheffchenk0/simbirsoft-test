@@ -39,6 +39,10 @@
     right: 30px;
 }
 
+.team:hover {
+    text-decoration: underline;
+}
+
 .title {
     font-size: 20px;
     color: #000;
